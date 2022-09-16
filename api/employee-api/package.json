@@ -1,0 +1,27 @@
+{
+  "name": "employee-api",
+  "version": "1.0.0",
+  "description": "API em Node.js",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon",
+    "lint": "eslint --ext .js, -f ./node_modules/eslint-friendly-formatter . --fix",
+    "prepush": "npm run lint",
+    "start": "node server.js"
+  },
+  "author": "Fredy Salazar",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.2",
+    "eslint-friendly-formatter": "^4.0.1",
+    "fastify": "^4.6.0",
+    "knex": "^2.1.0",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.1",
+    "husky": "^8.0.1",
+    "nodemon": "^2.0.19"
+  }
+}
