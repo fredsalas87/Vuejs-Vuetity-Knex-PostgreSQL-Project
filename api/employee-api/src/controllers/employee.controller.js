@@ -5,7 +5,7 @@
 
 const db = require('../config/database');
 
-// ==> Método ersponsável por criar um novo 'Employee'
+// ==> Método responsável por criar um novo 'Employee'
 exports.createEmployee = async(req, res) => {
   const { name, job_role, birth, employee_registration, email, password } = req.body;
   const { rows } = await db.query(
@@ -20,3 +20,9 @@ exports.createEmployee = async(req, res) => {
     },
   });
 };
+
+// ==> Método responsável por criar listar todos os 'Employees'
+exports.listAllEmployees = async(req, res) => {
+  const response = await db.query('SELECT * FROM employee ORDER BY name ASC');
+  res.status(200).send(response.rows);
+}
