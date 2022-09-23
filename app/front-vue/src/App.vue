@@ -1,46 +1,29 @@
 <template>
-  <v-app>
-    <v-app-bar
-      app
-      color="primary"
-      dark
-    >
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
+  <div>
+    <!-- Inicio NavBar -->
+    <v-app-bar>
+      <!-- <v-app-bar-title>CRUD Vue.js + PostgreSQL + Node.js</v-app-bar-title> -->
       <v-spacer></v-spacer>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+      <div class="container">
+        <!-- <a class="navbar-brand order-md-last">CRUD Vue.js + PostgreSQL + Node.js</a> -->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Create Employees</router-link>
+          </li>
+        </ul>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <router-link class="nav-link" to="/list-employees">List All Employees</router-link>
+          </li>
+        </ul>
+      </div>
     </v-app-bar>
-
-    <v-main>
+    <!-- FIm NavBar -->
+    <div class="container mt-5">
       <router-view/>
-    </v-main>
-  </v-app>
+    </div>
+  </div>
 </template>
 
 <script>
