@@ -2,14 +2,16 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import vuetify from './plugins/vuetify'
-import VueSweetalert2 from 'vue-sweetalert2';
+import VueSweetAlert2 from 'vue-sweetalert2';
+import Vuelidate from 'vuelidate';
 import '../node_modules/nprogress/nprogress.css';
 
 Vue.config.productionTip = false
+Vue.use(VueSweetAlert2)
+Vue.use(Vuelidate)
 
 new Vue({
   router,
   vuetify,
-  VueSweetalert2,
   render: h => h(App)
 }).$mount('#app')

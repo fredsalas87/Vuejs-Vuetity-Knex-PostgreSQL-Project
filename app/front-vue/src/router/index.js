@@ -7,9 +7,14 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
+    path: '/login-employee/:id',
+    name: 'Login Employee',
+    component: () => import('../components/login-employee/LoginEmployeeComponent')
+  },
+  {
+    path: '/create-employee',
     name: 'Create New Employee',
-    component: () => import('@/components/create-employee/CreateEmployeeComponent')
+    component: () => import('../components/create-employee/CreateEmployeeComponent')
   },
   {
     path: '/list-employees',
@@ -21,11 +26,6 @@ const routes = [
     name: 'Update Employee',
     component: () => import('../components/edit-employee/EditEmployeeComponent')
   },
-  {
-    path: '/login-employee/:id',
-    name: 'Login Employee',
-    component: () => import('../components/login-employee/LoginEmployeeComponent')
-  }
 ]
 
 const router = new VueRouter({

@@ -6,16 +6,92 @@
       </div>
       <div class="card-body mt-5">
         <form @submit.prevent="handleSubmitForm()">
-          <!-- INICIO BLOCO: Employee Name -->
           <div class="form-group">
-            <v-text-field v-model="employee.name" label="Employee Name" type="text" required></v-text-field>
-            <v-text-field v-model="employee.job_role" label="Job Role" type="text" required></v-text-field>
-            <v-text-field v-model="employee.birth" label="Birth" type="date" required></v-text-field>
-            <v-text-field v-model="employee.employee_registration" label="Employee Registration" type="number" required></v-text-field>
-            <v-text-field v-model="employee.email" label="Email" type="email" required></v-text-field>
-            <v-text-field v-model="employee.password" label="Password" type="password" required></v-text-field>
+            <v-text-field 
+              v-model="employee.name"
+              label="Employee Name"
+              type="text"
+              id="name"
+              name="name"
+              :class="{ 'is-invalid': isSubmitted && $v.employee.name.$error }"
+              >
+            </v-text-field>
+            <div v-if="isSubmitted && !$v.employee.name.required"
+              class="invalid-feedback"
+              >
+              Employee name fiel is required!
+            </div>
+            <v-text-field 
+              v-model="employee.job_role" 
+              label="Job Role" 
+              type="text" 
+              id="job_role"
+              name="job_role"
+              :class="{ 'is-invalid': isSubmitted && $v.employee.job_role.$error }"
+              >
+            </v-text-field>
+            <div v-if="isSubmitted && !$v.employee.job_role.required"
+              class="invalid-feedback"
+              >
+              Employee job role fiel is required!
+            </div>
+            <v-text-field 
+              v-model="employee.birth" 
+              label="Birth" 
+              type="date" 
+              id="birth"
+              name="birth"
+              :class="{ 'is-invalid': isSubmitted && $v.employee.birth.$error }"
+              >
+            </v-text-field>
+            <div v-if="isSubmitted && !$v.employee.birth.required"
+              class="invalid-feedback"
+              >
+              Employee birth fiel is required!
+            </div>
+            <v-text-field 
+              v-model="employee.employee_registration" 
+              label="Employee Registration" 
+              type="number" 
+              id="employee_registration"
+              name="employee_registration"
+              :class="{ 'is-invalid': isSubmitted && $v.employee.employee_registration.$error }"
+              >
+            </v-text-field>
+            <div v-if="isSubmitted && !$v.employee.employee_registration.required"
+              class="invalid-feedback"
+              >
+              Employee employee registration fiel is required!
+            </div>
+            <v-text-field 
+              v-model="employee.email" 
+              label="Email" 
+              type="email" 
+              id="email"
+              name="email"
+              :class="{ 'is-invalid': isSubmitted && $v.employee.email.$error }"
+              >
+            </v-text-field>
+            <div v-if="isSubmitted && !$v.employee.email.required"
+              class="invalid-feedback"
+              >
+              Employee email fiel is required!
+            </div>
+            <v-text-field 
+              v-model="employee.password" 
+              label="Password" 
+              type="password" 
+              id="password"
+              name="password"
+              :class="{ 'is-invalid': isSubmitted && $v.employee.password.$error }"
+              >
+            </v-text-field>
+            <div v-if="isSubmitted && !$v.employee.password.required"
+              class="invalid-feedback"
+              >
+              Employee password fiel is required!
+            </div>
           </div>
-          <!-- FIM BLOCO: Employee Name -->
           <v-app>
             <div class="form-group">
               <v-btn color="primary" type="submit">+ Employee</v-btn>
@@ -28,10 +104,9 @@
 </template>
 
 <script>
+import { required } from 'vuelidate/lib/validators'
 export default {
-  components: {
-    name: "CreateEmployeeComponent",
-  },
+  name: 'CreateEmployeeComponent',
   data() {
     return {
         employee: {
@@ -41,12 +116,28 @@ export default {
             employee_registration: '',
             email: '',
             password: '',
-        }
+        },
+        isSubmitted: false,
     };
+  },
+  validations: {
+    employee: {
+      name: { required },
+      job_role: { required },
+      birth: { required },
+      employee_registration: { required },
+      email: { required },
+      password: { required },
+    }
   },
   methods: {
     handleSubmitForm() {
-
+      this.isSubmitted = true;
+      
+      this.$v.$touch();
+      if(this.$v.$invalid){
+        return;
+      }
     }
   }
 };
