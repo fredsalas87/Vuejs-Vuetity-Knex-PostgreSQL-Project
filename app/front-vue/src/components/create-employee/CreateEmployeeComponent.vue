@@ -94,7 +94,9 @@
           </div>
           <v-app>
             <div class="form-group">
-              <v-btn color="primary" type="submit">+ Employee</v-btn>
+              <v-btn color="primary" >
+                <font-awesome-icon :icon="['fas', 'user-plus']"/>Employee
+              </v-btn>
             </div>
           </v-app>
         </form>
