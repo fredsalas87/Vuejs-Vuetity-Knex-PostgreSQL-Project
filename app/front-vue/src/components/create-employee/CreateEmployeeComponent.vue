@@ -17,7 +17,7 @@
               >
             </v-text-field>
             <div v-if="isSubmitted && !$v.employee.name.required"
-              class="invalid-feedback"
+              class="red--text"
               >
               Employee name fiel is required!
             </div>
@@ -31,7 +31,7 @@
               >
             </v-text-field>
             <div v-if="isSubmitted && !$v.employee.job_role.required"
-              class="invalid-feedback"
+              class="red--text"
               >
               Employee job role fiel is required!
             </div>
@@ -45,7 +45,7 @@
               >
             </v-text-field>
             <div v-if="isSubmitted && !$v.employee.birth.required"
-              class="invalid-feedback"
+              class="red--text"
               >
               Employee birth fiel is required!
             </div>
@@ -59,7 +59,7 @@
               >
             </v-text-field>
             <div v-if="isSubmitted && !$v.employee.employee_registration.required"
-              class="invalid-feedback"
+              class="red--text"
               >
               Employee employee registration fiel is required!
             </div>
@@ -73,7 +73,7 @@
               >
             </v-text-field>
             <div v-if="isSubmitted && !$v.employee.email.required"
-              class="invalid-feedback"
+              class="red--text"
               >
               Employee email fiel is required!
             </div>
@@ -87,14 +87,14 @@
               >
             </v-text-field>
             <div v-if="isSubmitted && !$v.employee.password.required"
-              class="invalid-feedback"
+              class="red--text"
               >
               Employee password fiel is required!
             </div>
           </div>
           <v-app>
             <div class="form-group">
-              <v-btn color="primary" >
+              <v-btn color="primary" type="submit">
                 <font-awesome-icon :icon="['fas', 'user-plus']"/>Employee
               </v-btn>
             </div>
