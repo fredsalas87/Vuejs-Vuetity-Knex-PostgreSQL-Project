@@ -6,7 +6,7 @@
       <v-spacer></v-spacer>
 
       <v-tabs align-with-title>
-        <v-tab><router-link class="nav-link" to="/login-employee/:id">Login Employee</router-link></v-tab>
+        <v-tab><router-link class="nav-link" to="/">Login Employee</router-link></v-tab>
         <v-tab><router-link class="nav-link" to="/create-employee">Create Employees</router-link></v-tab>
         <v-tab><router-link class="nav-link" to="/list-employees">List All Employees</router-link></v-tab>
         <v-tab><router-link class="nav-link" to="/edit-employee/:id">Edit Employee</router-link></v-tab>

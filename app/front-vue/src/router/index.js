@@ -7,23 +7,23 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/login-employee/:id',
-    name: 'Login Employee',
+    path: '/',
+    name: 'login',
     component: () => import('../components/login-employee/LoginEmployeeComponent')
   },
   {
     path: '/create-employee',
-    name: 'Create New Employee',
+    name: 'create',
     component: () => import('../components/create-employee/CreateEmployeeComponent')
   },
   {
     path: '/list-employees',
-    name: 'List All Employees',
+    name: 'list',
     component: () => import('../components/list-employee/ListEmployeeComponent')
   },
   {
     path: '/edit-employee/:id',
-    name: 'Update Employee',
+    name: 'update',
     component: () => import('../components/edit-employee/EditEmployeeComponent')
   },
 ]

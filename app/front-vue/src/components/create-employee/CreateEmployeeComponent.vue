@@ -94,7 +94,7 @@
           </div>
           <v-app>
             <div class="form-group">
-              <v-btn color="primary" type="submit">
+              <v-btn @click="submitNewEmployee" color="primary">
                 <font-awesome-icon :icon="['fas', 'user-plus']"/>Employee
               </v-btn>
             </div>
@@ -107,17 +107,18 @@
 
 <script>
 import { required } from 'vuelidate/lib/validators'
+import EmployeeServices from '../../services/EmployeeServices'
 export default {
   name: 'CreateEmployeeComponent',
   data() {
     return {
         employee: {
-            name: '',
-            job_role: '',
-            birth:'',
-            employee_registration: '',
-            email: '',
-            password: '',
+            name: null,
+            job_role: null,
+            birth: null,
+            employee_registration: null,
+            email: null,
+            password: null,
         },
         isSubmitted: false,
     };
@@ -139,6 +140,17 @@ export default {
       this.$v.$touch();
       if(this.$v.$invalid){
         return;
+      }
+    },
+
+    async submitNewEmployee() {
+      try {
+        await EmployeeServices.createNewEmployee(this.employee);
+        this.$router.push({
+          name: 'list'
+        })
+      } catch (error) {
+        console.log(error)
       }
     }
   }
