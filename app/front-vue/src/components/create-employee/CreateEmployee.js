@@ -48,11 +48,6 @@
              showConfirmButton: true,
              confirmButtonColor: "#4CAF50",
            });
-           this.$swal(
-             "Oops!",
-             "You need to include all the required fields",
-             "error"
-           );
            return;
          }
  
