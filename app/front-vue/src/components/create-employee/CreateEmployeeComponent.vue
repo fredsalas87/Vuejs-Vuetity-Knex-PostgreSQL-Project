@@ -108,7 +108,7 @@
           <v-app>
             <div class="form-group">
               <v-btn @click="submitNewEmployee" color="primary">
-                <font-awesome-icon :icon="['fas', 'user-plus']" />Employee
+                <font-awesome-icon :icon="['fas', 'user-plus']" class="mr-2" />Employee
               </v-btn>
             </div>
           </v-app>

@@ -18,7 +18,6 @@ export default {
                 { text: "Employee Registration", value: "employee_registration" },
                 { text: "Email", value: "email" },
                 { text: "Actions", value: "actions" },
-                { text: "teste", value: "employee_id" },
             ],
         };
     },

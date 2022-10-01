@@ -35,7 +35,7 @@ const router = new VueRouter({
 })
 
 router.beforeResolve((to, from, next) => {
-  if(to.name) {
+  if (to.name) {
     Nprogress.start();
   }
   next();

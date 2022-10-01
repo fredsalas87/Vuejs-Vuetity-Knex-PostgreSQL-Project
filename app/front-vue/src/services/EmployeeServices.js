@@ -31,7 +31,7 @@ export default {
             console.log(error)
         }
     },
-    
+
     /**
      * Método responsável por listar por ID um determinado 'Employee'
      * (GET): localhost:3000/api/employees/:id
@@ -44,7 +44,7 @@ export default {
             console.log(error)
         }
     },
-    
+
     /**
      * Método responsável por atualizar por ID um determinado 'Employee'
      * (PUT): localhost:3000/api/employees/:id
@@ -57,7 +57,7 @@ export default {
             console.log(error)
         }
     },
-    
+
     /**
      * Método responsável por excluir por ID um determinado 'Employee'
      * (DELETE): localhost:3000/api/employees/:id
