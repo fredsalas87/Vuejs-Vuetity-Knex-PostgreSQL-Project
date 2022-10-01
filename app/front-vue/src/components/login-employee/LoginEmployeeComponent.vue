@@ -1,41 +1,55 @@
-<template>
-  <div class="container">
-    <div class="card">
-      <div class="card-header">
-        <h3>Login Employee</h3>
-      </div>
-      <div>
-          <div>
-            <v-text-field v-model="employee.email" label="Email" type="email" required></v-text-field>
-            <v-text-field v-model="employee.password" label="Password" type="password" required></v-text-field>
-          </div>
-          <v-app>
-            <div>
-              <v-btn color="primary">Enter</v-btn>
-            </div>
-          </v-app>
-      </div>
+<!--<template>
+  <v-app>
+    <div id="content">
+      <v-row>
+        <v-col cols="12" sm="8" md="6">
+          <v-card>
+            <v-card-title class="headline"> Login </v-card-title>
+
+            <v-card-text>
+              <v-text-field
+                type="text"
+                label="username"
+                outlined
+                v-model="username"
+              ></v-text-field>
+              <v-text-field
+                label="password"
+                outlined
+                name="password"
+                v-model="password"
+                :type="ver ? 'text' : 'password'"
+                :append-icon="ver ? 'mdi-eye' : 'mdi-eye-off'"
+                @click:append="ver = !ver"
+              ></v-text-field>
+            </v-card-text>
+
+            <v-card-actions>
+              <v-spacer />
+              <v-btn color="primary" @click="login()"> Continue </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-col>
+      </v-row>
     </div>
-  </div>
-</template>
+  </v-app>
+</template>-->
 
 <script>
 export default {
-  name: 'CreateEmployeeComponent',
+  name: "CreateEmployeeComponent",
   data() {
     return {
-        employee: {
-            name: '',
-            job_role: '',
-            birth:'',
-            employee_registration: '',
-            email: '',
-            password: '',
-        }
+      employee: {
+        name: "",
+        job_role: "",
+        birth: "",
+        employee_registration: "",
+        email: "",
+        password: "",
+      },
     };
   },
-  methods: {
-
-  }
+  methods: {},
 };
 </script>
