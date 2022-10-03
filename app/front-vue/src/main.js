@@ -4,14 +4,12 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import VueSweetAlert2 from 'vue-sweetalert2';
 import Vuelidate from 'vuelidate';
-import VueTheMask from 'vue-the-mask';
 import './assets/icons';
 import '../node_modules/nprogress/nprogress.css';
 
 Vue.config.productionTip = false
 Vue.use(VueSweetAlert2)
 Vue.use(Vuelidate)
-Vue.use(VueTheMask)
 
 new Vue({
   router,

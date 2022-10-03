@@ -17,15 +17,14 @@
             label="Senha"
             required
             outlined
-            :type="ver ? 'text' : 'password'"
-            :append-icon="ver ? 'mdi-eye' : 'mdi-eye-off'"
-            @click:append="ver = !ver"
+            type="password"
           >
           </v-text-field>
         </v-card-text>
 
         <v-card-actions class="justify-center">
           <v-btn color="primary" @click="login">Continue</v-btn>
+          <v-btn color="primary" @click="createNewEmployee">Registration</v-btn>
         </v-card-actions>
       </v-card>
     </v-container>
@@ -53,6 +52,9 @@ export default {
       });
       this.$router.push({ name: "list" });
     },
+    createNewEmployee(){
+      this.$router.push({ name: "create" });
+    }
   },
 };
 </script>
