@@ -4,12 +4,13 @@
  */
 
 import { required } from "vuelidate/lib/validators";
-import EmployeeServices from "@/services/EmployeeServices";
+import EmployeeServices from "../../services/EmployeeServices";
 import SweetAlert2 from "sweetalert2";
 export default {
   name: "CreateEmployeeComponent",
   data() {
     return {
+      menu: false,
       employee: {
         name: null,
         job_role: null,

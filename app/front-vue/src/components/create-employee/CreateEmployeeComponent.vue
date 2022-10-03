@@ -16,12 +16,12 @@
               :class="{ 'is-invalid': isSubmitted && $v.employee.name.$error }"
             >
             </v-text-field>
-            <div
+            <!-- <div
               v-if="isSubmitted && !$v.employee.name.required"
               class="red--text"
             >
               Employee name fiel is required!
-            </div>
+            </div> -->
             <v-text-field
               v-model="employee.job_role"
               label="Job Role"
@@ -33,27 +33,42 @@
               }"
             >
             </v-text-field>
-            <div
+            <!-- <div
               v-if="isSubmitted && !$v.employee.job_role.required"
               class="red--text"
             >
               Employee job role fiel is required!
-            </div>
-            <v-text-field
-              v-model="employee.birth"
-              label="Birth"
-              type="date"
-              id="birth"
-              name="birth"
-              :class="{ 'is-invalid': isSubmitted && $v.employee.birth.$error }"
+            </div> -->
+            <v-menu
+              v-model="menu"
+              :close-on-content-click="false"
+              transition="scale-transition"
+              offset-y
+              min-width="290px"
             >
-            </v-text-field>
-            <div
-              v-if="isSubmitted && !$v.employee.birth.required"
-              class="red--text"
-            >
-              Employee birth fiel is required!
-            </div>
+              <template v-slot:activator="{ on }">
+                <v-text-field
+                  v-model="employee.birth"
+                  label="Birth"
+                  id="birth"
+                  name="birth"
+                  v-on="on"
+                  :class="{
+                    'is-invalid': isSubmitted && $v.employee.birth.$error,
+                  }"
+                ></v-text-field>
+                <!-- <div
+                  v-if="isSubmitted && !$v.employee.birth.required"
+                  class="red--text"
+                >
+                  Employee birth fiel is required!
+                </div> -->
+              </template>
+              <v-date-picker
+                v-model="employee.birth"
+                @click="menu = false"
+              ></v-date-picker>
+            </v-menu>
             <v-text-field
               v-model="employee.employee_registration"
               label="Employee Registration"
@@ -66,12 +81,12 @@
               }"
             >
             </v-text-field>
-            <div
+            <!-- <div
               v-if="isSubmitted && !$v.employee.employee_registration.required"
               class="red--text"
             >
               Employee employee registration fiel is required!
-            </div>
+            </div> -->
             <v-text-field
               v-model="employee.email"
               label="Email"
@@ -81,12 +96,12 @@
               :class="{ 'is-invalid': isSubmitted && $v.employee.email.$error }"
             >
             </v-text-field>
-            <div
+            <!-- <div
               v-if="isSubmitted && !$v.employee.email.required"
               class="red--text"
             >
               Employee email fiel is required!
-            </div>
+            </div> -->
             <v-text-field
               v-model="employee.password"
               label="Password"
@@ -98,17 +113,20 @@
               }"
             >
             </v-text-field>
-            <div
+            <!-- <div
               v-if="isSubmitted && !$v.employee.password.required"
               class="red--text"
             >
               Employee password fiel is required!
-            </div>
+            </div> -->
           </div>
           <v-app>
             <div class="form-group">
               <v-btn @click="submitNewEmployee" color="primary">
-                <font-awesome-icon :icon="['fas', 'user-plus']" class="mr-2" />Employee
+                <font-awesome-icon
+                  :icon="['fas', 'user-plus']"
+                  class="mr-2"
+                />Employee
               </v-btn>
             </div>
           </v-app>

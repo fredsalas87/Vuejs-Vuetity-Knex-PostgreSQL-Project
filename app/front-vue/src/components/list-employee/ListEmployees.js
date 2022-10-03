@@ -5,6 +5,7 @@
 
 import EmployeeServices from "../../services/EmployeeServices";
 import SweetAlert2 from "sweetalert2";
+import moment from "moment";
 
 export default {
     name: "ListEmployeeComponent",
@@ -24,6 +25,15 @@ export default {
     mounted() {
         this.listAllEmployees();
     },
+
+    filters: {
+        birthDate(value) {
+            if (value) {
+                return moment(String(value)).format('DD/MM/YYYY')
+            }
+        },
+    },
+
     methods: {
         async listAllEmployees() {
             const response = await EmployeeServices.getEmployees();
@@ -31,7 +41,6 @@ export default {
         },
 
         async removeEmployee(id) {
-
             const swal = new SweetAlert2({
                 title: 'Are you sure?',
                 text: "You won't be able to revert this!",

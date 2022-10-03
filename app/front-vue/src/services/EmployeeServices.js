@@ -49,12 +49,14 @@ export default {
      * Método responsável por atualizar por ID um determinado 'Employee'
      * (PUT): localhost:3000/api/employees/:id
      */
-    async updateEmployeeId(id) {
+
+    async updateEmployee(employee) {
         try {
-            const response = await Api().put(`/employees/${id}`);
-            return response.data
+            const id = employee.employee_id;
+            const response = await Api().put(`/employees/${id}`, employee);
+            return response.data;
         } catch (error) {
-            console.log(error)
+            return console.log(error);
         }
     },
 
