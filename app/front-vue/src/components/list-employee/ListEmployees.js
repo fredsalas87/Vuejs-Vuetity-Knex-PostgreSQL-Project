@@ -35,6 +35,18 @@ export default {
     },
 
     methods: {
+        logout() {
+            this.$router.push({
+                name: "login",
+            });
+        },
+
+        createEmployee() {
+            this.$router.push({
+                name: "create",
+            });
+        },
+
         async listAllEmployees() {
             const response = await EmployeeServices.getEmployees();
             this.employees = response;

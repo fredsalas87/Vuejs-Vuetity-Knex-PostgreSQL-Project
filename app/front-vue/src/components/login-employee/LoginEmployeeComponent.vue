@@ -1,11 +1,11 @@
 <template>
   <v-app>
     <v-container class="fill-height">
-      <v-card elevation="1" class="mx-auto" width="400">
+      <v-card elevation="1" class="mx-auto" width="400" color="#F0F4C3">
         <v-card-title class="headline justify-center">Login</v-card-title>
         <v-card-text class="mr-2">
           <v-text-field
-            v-model="email"
+            v-model="params.email"
             label="E-mail"
             type="text"
             required
@@ -13,8 +13,8 @@
           >
           </v-text-field>
           <v-text-field
-            v-model="senha"
-            label="Senha"
+            v-model="params.password"
+            label="Password"
             required
             outlined
             type="password"
@@ -31,30 +31,4 @@
   </v-app>
 </template>
 
-<script>
-import SweetAlert2 from "sweetalert2";
-export default {
-  name: "Login",
-
-  data: () => ({
-    ver: false,
-    email: "",
-    senha: "",
-  }),
-
-  methods: {
-    login() {
-      const swal = new SweetAlert2({
-        icon: "success",
-        title: "Login successfully!",
-        showConfirmButton: false,
-        timer: 1000,
-      });
-      this.$router.push({ name: "list" });
-    },
-    createNewEmployee(){
-      this.$router.push({ name: "create" });
-    }
-  },
-};
-</script>
+<script src="./LoginEmployee.js"></script>

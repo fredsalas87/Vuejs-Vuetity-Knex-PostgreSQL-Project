@@ -1,8 +1,25 @@
 <template>
   <v-app>
     <v-container>
-      <div>
-        <h3 class="text-center">List All Employees</h3>
+      <v-row>
+        <v-col>
+          <v-btn @click="createEmployee" color="primary">
+            <font-awesome-icon
+              :icon="['fas', 'user-plus']"
+              class="mr-2"
+            />Employee
+          </v-btn>
+        </v-col>
+        <v-col class="text-right">
+          <v-btn color="error" @click="logout"
+            ><font-awesome-icon
+              :icon="['fas', 'fa-sign-out']"
+              class="mr-2"
+            />Logout</v-btn
+          >
+        </v-col>
+      </v-row>
+        <h3 class="text-center mb-5 mt-5">List All Employees</h3>
         <table style="width: 100%; text-align: center">
           <thead>
             <tr>
@@ -22,7 +39,7 @@
               <td>{{ employee.employee_registration }}</td>
               <td>{{ employee.email }}</td>
               <td>
-                <v-btn color="success">
+                <v-btn color="success" class="mr-3">
                   <router-link
                     :to="{
                       name: 'update',
@@ -36,8 +53,6 @@
                     />Edit
                   </router-link>
                 </v-btn>
-              </td>
-              <td>
                 <v-btn
                   @click="removeEmployee(employee.employee_id)"
                   color="error"
@@ -48,10 +63,10 @@
                   />Delete
                 </v-btn>
               </td>
+              <!-- <td></td> -->
             </tr>
           </tbody>
         </table>
-      </div>
     </v-container>
   </v-app>
 </template>

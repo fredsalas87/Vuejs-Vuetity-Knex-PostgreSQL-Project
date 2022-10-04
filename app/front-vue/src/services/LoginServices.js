@@ -12,7 +12,8 @@
      */
      async loginEmployee(params) {
         try {
-            const response = await Api().post(`/employees/login/${params}`);
+            const response = await Api().post('/employees/login', params);
+            console.log(response);
             return response.data
         } catch (error) {
             console.log(error)
